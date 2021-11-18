@@ -15,10 +15,10 @@ class Cart extends Component
     public $discountAmt;
 
     public function render()
-    {   
+    {
         return view('livewire.storefront.frontend.cart',[
             'cart'=> $this
-        ]);
+        ])->extends('layouts.storeFrontend');
     }
 
     public function getCartItem(){

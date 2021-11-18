@@ -21,7 +21,7 @@ class CreateStore extends Component
     public $bannerStatus = false;
 
     protected array $rules = [
-        'store.name' => 'required|max:20',
+        'store.name' => 'required|max:20|unique:stores,name',
         'store.store_type_id' => 'required|int',
         'store.theme' => 'required',
         'store.title' => 'required|max:40',
@@ -59,23 +59,14 @@ class CreateStore extends Component
     public function createStore()
     {
 
-
-
         $this->validate();
 
         $this->dispatchBrowserEvent('first-form');
 
          $logoFIleName = $this->upload->store('/','storeLogo');
 
-        $id = Contact::create([
-            'contact_num' => $this->contact->contact_num,
-            'contact_email' => $this->contact->contact_email,
-            'contact_location' => $this->contact->contact_location
-        ])->id;
-
         $id = Store::create([
             'user_id' => 85,
-            'contact_id' => $id,
             'store_type_id' => $this->store->store_type_id,
             'name' => $this->store->name,
             'title' => $this->store->title,
@@ -86,6 +77,13 @@ class CreateStore extends Component
             'desc' => $this->store->desc,
             'logo_path' => $logoFIleName
         ])->id;
+
+        Contact::create([
+            'store_id' => $id,
+            'contact_num' => $this->contact->contact_num,
+            'contact_email' => $this->contact->contact_email,
+            'contact_location' => $this->contact->contact_location
+        ]);
 
         foreach ($this->bannerUpload as $bannerI){
 
@@ -99,7 +97,7 @@ class CreateStore extends Component
         }
 
         $this->dispatchBrowserEvent('show-alert');
-        return redirect()->route('backEnd.dashboard')->with(['success','Store Created Successful']);
+        return redirect()->route('backend.dashboard')->with(['success','Store Created Successful']);
 
     }
 

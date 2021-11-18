@@ -69,7 +69,7 @@ class Store extends Model
 
     protected $fillable = [
         'user_id',
-        'contact_id',
+//        'contact_id',
         'store_type_id',
         'name',
         'title',
@@ -78,7 +78,6 @@ class Store extends Model
         'mission',
         'theme',
         'desc',
-        'theme',
         'logo_path'
     ];
 
@@ -89,7 +88,7 @@ class Store extends Model
 
     public function contact(): HasMany
     {
-        return $this->hasMany(contact::class);
+        return $this->hasMany(contact::class,'store_id');
     }
 
     public function product(): HasMany

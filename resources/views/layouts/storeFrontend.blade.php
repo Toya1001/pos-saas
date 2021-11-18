@@ -13,28 +13,28 @@
 </head>
 <body>
 
-<div
-    class="relative flex items-top justify-center w-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
-    <section class="relative bg-gray-100 overflow-x-hidden">
+@livewire('storefront.navigation.home-navi')
 
-        @livewire('storefront.navigation.home-navi')
+<div class="">
 
-        @yield('content')
+    @yield('content')
 
-       @if(request()->routeIs('index'))
+    {{--    @livewire('storefront.frontend.footer')--}}
+</div>
 
-            @livewire('storefront.frontend.tiles')
+<div>
 
-        @endif
+    @livewire('storefront.frontend.tiles')
 
-        @livewire('storefront.frontend.footer')
+    @livewire('storefront.frontend.products')
 
-    </section>
 
 </div>
 
-        @livewireScripts
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@livewire('storefront.frontend.footer')
+
+@livewireScripts
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
