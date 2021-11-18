@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CustomerFactory extends Factory
+class SalesAssociateFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,7 +15,8 @@ class CustomerFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory()
+            'user_id' => User::where('user_type',3)->get()->random()->id,
+            'hours' => random_int(0,9000)
         ];
     }
 }
