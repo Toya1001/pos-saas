@@ -19,12 +19,12 @@ class StoreFactory extends Factory
         return [
             'user_id' => User::factory(),
             'store_type_id' => $this->faker->numberBetween(0, 5),
-            'name' => $this->faker->name(),
+            'name' => $this->faker->word(3),
             'title' => $this->faker->companySuffix(),
             'banner_message' => $this->faker->realText(20),
             'slogan' => $this->faker->realText(20),
             'mission' => $this->faker->realText(10),
-            'theme' => "black",
+            'theme' => $this->faker->hexColor(),
             'desc' => $this->faker->realText(22),
             'logo_path' => 'logo.png',
         ];

@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->customer()->has(Customer::factory())->count(1000)->create();
         User::factory()->salesAccountant()->has(SalesAssociate::factory())->count(50)->create();
-        User::factory()->merchant()->has(Store::factory()->randomColors()->has(Contact::factory()))->count(20)->create();
+        User::factory()->merchant()->has(Store::factory()->has(Contact::factory()))->count(20)->create();
         User::factory()->superAdmin()->count(5)->create();//
 
         $stores = Store::all();

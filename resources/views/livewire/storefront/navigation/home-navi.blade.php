@@ -1,5 +1,5 @@
 <div x-data="{ isCart: false }"
-    class=" w-screen z-20 bg-transparent absolute top-0 ">
+    class=" w-screen z-40 bg-transparent absolute top-0 ">
 
     <div class="flex items-center justify-between h-16 px-4 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
 

@@ -1,6 +1,7 @@
 <section role="banner" class="bg-white">
 
-    <div class="bg-{{ ($storeInfos->theme === 'black') ? 'black' : $storeInfos->theme.'-600' }}  absolute z-10 h-screen w-screen bg-opacity-70"></div>
+    <div class=" absolute z-10 h-screen opacity-70 w-screen"
+         style="background-color: {{ $storeInfos->theme }};  "></div>
 
     <div class="mx-auto sm:grid  lg:grid-cols-3 max-w-screen-2xl lg:h-screen">
         <div class="relative flex items-end px-4 pt-64 pb-4 lg:col-span-2 sm:px-8 sm:pb-8 lg:px-12 lg:pb-12">
@@ -13,7 +14,7 @@
 
         <div class="w-screen absolute inset-0 z-20 flex justify-center items-center flex-col mx-auto text-center">
             <h1
-                class="text-3xl font-extrabold text-transparent sm:text-8xl bg-clip-text bg-white">
+                class="text-3xl p-5 font-extrabold text-transparent sm:text-8xl bg-clip-text bg-white">
 
                 {{ $storeInfos->name }}
 
