@@ -3,22 +3,26 @@
 namespace App\Http\Livewire\Storefront\Backend;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class AdminProfile extends Component
 {
-    public $name = 'Javaughn Bailey';
-    public $email = 'javaughnbailey21@gmail.com';
-    public $password = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi';
+    public $name;
+    public $email;
+    public $password;
+    public $password_confirmation;
     public $passwordCheck;
 
-    public function changeName(){
+    protected $rules = [
+        'password' => 'required|unique:users|confirmed',
+        'passwordCheck' => 'required',
+    ];
 
-
+    public function changeName()
+    {
         User::update([
-           'name' => $this->name
+            'name' => $this->name
         ]);
 
     }
@@ -30,11 +34,14 @@ class AdminProfile extends Component
 
     public function changePassCheck()
     {
-        if (!Hash::check($this->passwordCheck,$this->password)) {
-            dd('hush dawq');
+        $this->validateOnly('passwordCheck');
+
+        if (Hash::check($this->passwordCheck, auth()->user()->password)) {
+            $this->dispatchBrowserEvent('change-password-check-close');
+            $this->dispatchBrowserEvent('change-password-view-open');
         }
-        $this->dispatchBrowserEvent('change-password-check-close');
-        $this->dispatchBrowserEvent('change-password-view-open');
+
+        $this->addError('passwordCheck', trans('auth.password'));
 
     }
 
@@ -45,14 +52,23 @@ class AdminProfile extends Component
 
     public function changePassAction()
     {
-
+        $this->validateOnly('password');
 //        $user = User::find(auth()->id());
-
-        User::update([
-            'name' => $this->name,
-            'password' => $this->password,
+        auth()->user()->update([
+            'password' => $this->password
         ]);
 
+    }
+
+    public function updated()
+    {
+        $this->validate();
+    }
+
+    public function mount()
+    {
+        $this->name = auth()->user()->name;
+        $this->email = auth()->user()->email;
     }
 
     public function render()

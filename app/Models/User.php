@@ -113,4 +113,9 @@ class User extends Authenticatable
         return $this->hasMany(SessionLog::class);
     }
 
+    public function setPasswordAttribute($value): string
+    {
+        return $this->attributes['password'] = bcrypt($value);
+    }
+
 }

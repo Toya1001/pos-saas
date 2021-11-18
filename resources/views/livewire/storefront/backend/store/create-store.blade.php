@@ -62,18 +62,22 @@
 
                 <x-input.label label="Store Color Theme">
 
-                    <x-input.select field="Color" wire:model="store.theme"
-                                    :error="$errors->first('store.theme')">
+{{--                    <x-input.select field="Color" wire:model="store.theme"--}}
+{{--                                    :error="$errors->first('store.theme')">--}}
 
-                        <option value="blue" class="capitalize">Blue</option>
-                        <option value="red" class="capitalize">red</option>
-                        <option value="yellow" class="capitalize">yellow</option>
-                        <option value="orange" class="capitalize">orange</option>
-                        <option value="green" class="capitalize">green</option>
-                        <option value="gray" class="capitalize">gray</option>
-                        <option value="indigo" class="capitalize">indigo</option>
+{{--                        <option value="blue" class="capitalize">Blue</option>--}}
+{{--                        <option value="red" class="capitalize">red</option>--}}
+{{--                        <option value="yellow" class="capitalize">yellow</option>--}}
+{{--                        <option value="orange" class="capitalize">orange</option>--}}
+{{--                        <option value="green" class="capitalize">green</option>--}}
+{{--                        <option value="gray" class="capitalize">gray</option>--}}
+{{--                        <option value="indigo" class="capitalize">indigo</option>--}}
 
-                    </x-input.select>
+{{--                    </x-input.select>--}}
+
+
+                    <x-input.text wire:model.debounce.300ms="store.theme" type="color" class="h-10"
+                                  :error="$errors->first('store.theme')" />
 
                 </x-input.label>
 

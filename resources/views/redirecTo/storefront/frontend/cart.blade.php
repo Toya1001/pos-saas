@@ -5,7 +5,6 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    
+
     @livewire('storefront.frontend.cart')
 </x-app-layout>
-  

@@ -11,7 +11,8 @@ use App\Models\Sales;
 use App\Models\SalesAssociate;
 use App\Models\Store;
 use App\Models\User;
-use Database\Factories\CouponFactory;
+use Database\Factories\BannerFactory;
+use Database\Factories\StoreFactory;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Database\Seeder;
 
@@ -27,27 +28,34 @@ class DatabaseSeeder extends Seeder
         //has to run in the order of the migrations
 
 
-                $this->call([
+        $this->call([
             StoreTypeSeeder::class,
         ]);
+
         User::factory()->customer()->has(Customer::factory())->count(1000)->create();
         User::factory()->salesAccountant()->has(SalesAssociate::factory())->count(50)->create();
-        User::factory()->merchant()->has(Store::factory())->count(20)->create();
+        User::factory()->merchant()->has(Store::factory()->has(Contact::factory()))->count(20)->create();
         User::factory()->superAdmin()->count(5)->create();//
 
+        $stores = Store::all();
+        foreach ($stores as $store) {
+            BannerFactory::new()->storeID($store->id)->sequence(
+                ['image_path' => '69Utd2Pljj7Npse4Dd8O7xxdelne17IRUFANVwGy.png'],
+                ['image_path' => 'nUTBhmSnUwSn50j4lnn832Ghbe5wCN7USrHt9i9e.png'],
+                ['image_path' => 'zwK5nM5yq5yVDahvosfBCCfSvz4UHWM8zSkZ05dQ.png'],
+            )->count(3)->create();
+        }
+
         $this->call([
-            // StoreSeeder::Class,
-            BannerSeeder::class,
             BrandSeeder::class,
             CategoryTypeSeeder::class,
             CategorySeeder::class,
-
-
         ]);
 
         Product::factory()->count(4000)->state(new Sequence(
             ['status' => 'active'],
-            ['status' => 'inactive']
+            ['status' => 'inactive'],
+            ['sale_price' => null]
         ))->create();
 
         $this->call([
@@ -70,7 +78,6 @@ class DatabaseSeeder extends Seeder
             CommissionSeeder::class,
             InboxSeeder::class,
         ]);
-
 
 
     }

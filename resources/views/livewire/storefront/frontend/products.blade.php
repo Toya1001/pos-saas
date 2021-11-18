@@ -1,207 +1,133 @@
-<div>
+<div class=""><!-- Component Start -->
+    <h1 class="text-4xl font-extrabold text-right mt-4 p-3">Product Category Page Title</h1>
 
-<div x-data="{ cartOpen: false , isOpen: false }" class="bg-white">
+    <div class="flex flex-col sm:flex-row b sm:items-end sm:justify-between mt-6 p-3">
 
-    @livewire('storefront.frontend.cart-preview')
+        <span class="text-sm font-semibold"></span>
 
-    <main class="my-8">
-        <div class="container mx-auto px-6">
-            <h3 class="text-gray-700 text-2xl font-medium">Hot Picks</h3>
-            <span class="mt-3 text-sm text-gray-500">200+ Products</span>
-            <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1495856458515-0637185db551?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">Classic watch</h3>
-                        <span class="text-gray-500 mt-2 ">$123</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-1.2.1&auto=format&fit=crop&w=689&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">Old watch</h3>
-                        <span class="text-gray-500 mt-2">$95</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">Classic watch</h3>
-                        <span class="text-gray-500 mt-2">$125</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">fossil watch</h3>
-                        <span class="text-gray-500 mt-2">$180</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">braun watch</h3>
-                        <span class="text-gray-500 mt-2">$49</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1526045431048-f857369baa09?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">rolex watch</h3>
-                        <span class="text-gray-500 mt-2">$86</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1495857000853-fe46c8aefc30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">MVMtx watch</h3>
-                        <span class="text-gray-500 mt-2">$100</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1444881421460-d838c3b98f95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">breitling watch</h3>
-                        <span class="text-gray-500 mt-2">$180</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1495856458515-0637185db551?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">Classic watch</h3>
-                        {{-- If else to determine price status --}}
-                        <span class="text-gray-500 mt-2 line-through">$123</span>
-                        <span class="text-gray-500 mt-2 font-semibold text-red-400 text-lg">$90</span>
-                        {{-- If else to determine price status --}}
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-1.2.1&auto=format&fit=crop&w=689&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">Old watch</h3>
-                        <span class="text-gray-500 mt-2">$95</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1532667449560-72a95c8d381b?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">Classic watch</h3>
-                        <span class="text-gray-500 mt-2">$125</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">fossil watch</h3>
-                        <span class="text-gray-500 mt-2">$180</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">braun watch</h3>
-                        <span class="text-gray-500 mt-2">$49</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1526045431048-f857369baa09?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">rolex watch</h3>
-                        <span class="text-gray-500 mt-2">$86</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1495857000853-fe46c8aefc30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">MVMtx watch</h3>
-                        <span class="text-gray-500 mt-2">$100</span>
-                    </div>
-                </div>
-                <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-                    <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('https://images.unsplash.com/photo-1444881421460-d838c3b98f95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80')">
-                        <button class="p-2 rounded-full bg-purple-600 text-white mx-5 -mb-4 hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
-                            <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </button>
-                    </div>
-                    <div class="px-5 py-3">
-                        <h3 class="text-gray-700 uppercase">breitling watch</h3>
-                        <span class="text-gray-500 mt-2">$180</span>
-                    </div>
-                </div>
+        <button class="relative text-sm focus:outline-none group mt-4 sm:mt-0">
+
+            <div
+                class="flex items-center justify-between w-40 h-10 px-3 border-2 border-gray-300 rounded hover:bg-gray-300">
+
+				<span class="font-medium">
+
+					Popular
+
+				</span>
+
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+
+                    <path fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"/>
+
+                </svg>
+
             </div>
 
-            <div class="flex justify-center">
-                <div class="flex rounded-md mt-8">
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-purple-700 border-r-0 ml-0 rounded-l hover:bg-purple-500 hover:text-white"><span>Previous</a></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-purple-700 border-r-0 hover:bg-purple-500 hover:text-white"><span>1</span></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-purple-700 border-r-0 hover:bg-purple-500 hover:text-white"><span>2</span></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-purple-700 border-r-0 hover:bg-purple-500 hover:text-white"><span>3</span></a>
-                    <a href="#" class="py-2 px-4 leading-tight bg-white border border-gray-200 text-purple-700 rounded-r hover:bg-purple-500 hover:text-white"><span>Next</span></a>
-                </div>
+            <div
+                class="absolute z-10 flex-col items-start hidden w-full pb-1 bg-white shadow-lg rounded group-focus:flex">
+
+                <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#">Popular</a>
+
+                <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#">Featured</a>
+
+                <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#">Newest</a>
+
+                <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#">Lowest Price</a>
+
+                <a class="w-full px-4 py-2 text-left hover:bg-gray-200" href="#">Highest Price</a>
+
             </div>
 
-        </div>
-    </main>
+        </button>
 
-</div>
-</div>
+    </div>
+
+    <div
+        class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-6 gap-y-12 w-full p-3 mt-6">
+
+        <!-- Product Tile Start -->
+
+        @forelse($products as $product)
+
+            <div class="transform transition duration-500 ease-in-out">
+
+                <img src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_960_720.jpg"
+                     class="block h-64 rounded-lg shadow-lg bg-white"/>
+
+                <div class="flex items-center justify-between mt-3">
+
+                    <div>
+
+                        <a href="#" class="font-medium">
+
+                            {{ $product->name }}
+
+                        </a>
+
+
+                    </div>
+
+                    @if($product->sale_price)
+
+                        <span
+                            class="flex items-center line-through h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
+
+                        ${{ number_format($product->price,2) }}
+
+                    </span>
+
+                        <span class="flex items-center h-8 bg-red-200 text-red-700 text-sm px-2 rounded">
+
+                        ${{ number_format($product->sale_price,2) }}
+
+                    </span>
+
+                    @else
+
+                        <span
+                            class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
+
+                        ${{ number_format($product->price,2) }}
+
+                    </span>
+
+
+                    @endif
+
+                </div>
+
+            </div>
+
+
+        @empty
+
+            <h1 class="text-4xl font-extrabold text-center mt-4 p-3">
+
+                No Product Have Been Added Yet
+
+            </h1>
+
+    @endforelse
+    <!-- Product Tile End -->
+
+    </div>
+
+
+    <div class="flex m-3 justify-center mt-10 space-x-1">
+
+        @if($more)
+
+            <a wire:click.prevent="seeMoreStore"
+               class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg" href="">
+
+                View More
+
+            </a>
+
+        @endif
+
+    </div>
+    <!-- Component End  --></div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * App\Models\Banner
@@ -27,12 +28,21 @@ use Illuminate\Database\Eloquent\Model;
 class Banner extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'store_id',
         'image_path'
     ];
 
-    public function store(){
+    public function store()
+    {
         return $this->belongsTo(Store::class);
+    }
+
+    public function bannerLogo()
+    {
+        return $this->image_path
+            ? Storage::disk('bannerImages')->url($this->image_path)
+            : 'https://www.hyperui.dev/code/photos/team-2.jpeg';
     }
 }
