@@ -25,11 +25,23 @@ class StoreFactory extends Factory
             'banner_message' => $this->faker->realText(20),
             'slogan' => $this->faker->realText(20),
             'mission' => $this->faker->realText(10),
-            'theme' => "lorem",
+            'theme' => "black",
             'desc' => $this->faker->realText(22),
-            'logo_path' => Str::random(10),
+            'logo_path' => 'logo.png',
         ];
     }
 
-
+    public function randomColors(){
+       return $this->sequence(
+          ['theme' => 'red'],
+          ['theme' => 'purple'],
+          ['theme' => 'green'],
+          ['theme' => 'yellow'],
+          ['theme' => 'blue'],
+          ['theme' => 'grey'],
+          ['theme' => 'pink'],
+          ['theme' => 'black'],
+          ['theme' => 'indigo'],
+        );
+    }
 }

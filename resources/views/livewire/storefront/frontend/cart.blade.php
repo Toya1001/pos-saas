@@ -79,7 +79,7 @@
   </style>
   <div style="background-image: url('img/tree.png')">
 
-    <div class="flex justify-center my-6">
+    <div class="flex justify-center mt-20">
         <div class="flex bg-white shadow-lg flex-col bg-white w-full p-8 text-gray-800 pin-r pin-y md:w-4/5 lg:w-4/5">
           <div class="flex-1">
             <table class="w-full text-sm lg:text-base" cellspacing="0">

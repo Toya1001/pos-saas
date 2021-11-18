@@ -46,7 +46,7 @@ class StoreList extends Component
     public function render()
     {
         return view('livewire.home.store-list', [
-            'stores' => Store::paginate($this->paginator),
+            'stores' => Store::orderBy('created_at','desc')->paginate($this->paginator),
         ]);
     }
 }

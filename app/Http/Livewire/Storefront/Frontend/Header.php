@@ -15,7 +15,6 @@ class Header extends Component
     {
         $request = Request::segments(1);
 
-
         return view('livewire.storefront.frontend.header',[
             'storeInfos' => Store::with('banner')->where('name',$request[0])->first(),
         ])

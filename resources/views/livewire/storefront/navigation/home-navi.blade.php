@@ -1,4 +1,5 @@
-<header class=" w-screen z-20 bg-transparent absolute top-0 ">
+<div x-data="{ isCart: false }"
+    class=" w-screen z-20 bg-transparent absolute top-0 ">
 
     <div class="flex items-center justify-between h-16 px-4 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
 
@@ -46,7 +47,8 @@
 
             </div>
 
-            <a href="{{ route('cart') }}" class="block px-6 text-white text-center ">
+            <a @click.prevent="isCart = !isCart"
+                href="#" class="block px-6 text-white text-center ">
 
                 <i class="fas fa-shopping-cart"> (0) </i>
 
@@ -78,4 +80,11 @@
             </button>
         </div>
     </div>
-</header>
+
+    <x-modal alpName="isCart" class="bg-{{ $storeInfos->theme }}-600 z-20 p-4">
+
+        @livewire('storefront.frontend.cart')
+
+    </x-modal>
+
+</div>
