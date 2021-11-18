@@ -30,7 +30,7 @@
                 <img
                     src="{{ $store->logoUrl($store->logo_path) }}"
                     alt=""
-                    class="object-cover w-full h-72 rounded-bl-3xl rounded-tr-3xl"
+                    class="object-contain bg-gray-100 w-full h-72 rounded-bl-3xl rounded-tr-3xl"
                 />
 
                 <div class="flex items-center justify-center text-white text-lg font-bold mt-4 space-x-4">

@@ -10,14 +10,14 @@ class StoreList extends Component
 {
     use WithPagination;
 
-    public int $paginator = 3;
+    public int $paginator = 9;
     public bool $more = true;
 
     public Store $store;
 
     public function seeMoreStore(): void
     {
-        $this->paginator += 3;
+        $this->paginator += 6;
 
         $count = Store::count();
 
