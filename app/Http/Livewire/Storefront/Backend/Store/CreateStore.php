@@ -65,15 +65,8 @@ class CreateStore extends Component
 
          $logoFIleName = $this->upload->store('/','storeLogo');
 
-        $id = Contact::create([
-            'contact_num' => $this->contact->contact_num,
-            'contact_email' => $this->contact->contact_email,
-            'contact_location' => $this->contact->contact_location
-        ])->id;
-
         $id = Store::create([
             'user_id' => 85,
-            'contact_id' => $id,
             'store_type_id' => $this->store->store_type_id,
             'name' => $this->store->name,
             'title' => $this->store->title,
@@ -84,6 +77,13 @@ class CreateStore extends Component
             'desc' => $this->store->desc,
             'logo_path' => $logoFIleName
         ])->id;
+
+        Contact::create([
+            'store_id' => $id,
+            'contact_num' => $this->contact->contact_num,
+            'contact_email' => $this->contact->contact_email,
+            'contact_location' => $this->contact->contact_location
+        ]);
 
         foreach ($this->bannerUpload as $bannerI){
 

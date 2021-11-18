@@ -1,7 +1,10 @@
 <footer class="text-white bg-gray-900 lg:grid lg:grid-cols-5">
     <aside class="hidden lg:relative lg:col-span-2 lg:block">
+
+
+
         <img
-            src="https://images.unsplash.com/photo-1624456735729-03594a40c5fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"
+            src="{{ $storeInfo->banner[2]->bannerlogo() }}"
             alt="Comic graphic"
             class="absolute inset-0 object-cover w-full h-full"
         />
@@ -12,7 +15,7 @@
             <div>
                 <p class="font-medium">
                     <span class="text-xs tracking-widest uppercase">Call</span>
-                    <a href="" class="block text-3xl">0123456789</a>
+                    <a href="" class="block text-3xl">{{ $storeInfo->contact[0]->contact_num }}</a>
                 </p>
 
                 <ul class="mt-8 space-y-2 text-sm">
@@ -134,14 +137,11 @@
                     <a href="">Returns Policy</a>
                 </div>
 
-                <p class="mt-4 sm:mt-0">© Name Company Name</p>
+                <p class="mt-4 sm:mt-0">© {{ $storeInfo->name }}</p>
             </div>
 
             <p class="mt-8 text-xs text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus mollitia quia quod repellendus. Porro harum,
-                odio dolore perspiciatis praesentium provident esse consequatur quibusdam aperiam, cupiditate omnis modi in
-                quasi? In, maxime odio vel repellat sed earum? Debitis quaerat facilis animi. Odio natus nostrum laboriosam
-                impedit magnam praesentium asperiores consectetur ipsum.
+                {{ $storeInfo->desc }}
             </p>
         </div>
     </div>

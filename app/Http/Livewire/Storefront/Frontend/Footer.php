@@ -13,7 +13,7 @@ class Footer extends Component
         $request = Request::segments(1);
 
         return view('livewire.storefront.frontend.footer',[
-            'storeInfo' => Store::where('name',$request[0])->get(),
+            'storeInfo' => Store::with('banner','contact')->where('name',$request[0])->first(),
         ]);
     }
 }

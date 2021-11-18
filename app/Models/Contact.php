@@ -31,11 +31,12 @@ class Contact extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'store_id',
         'contact_num',
         'contact_email',
         'contact_location'
     ];
     public function store(){
-        return $this->belongsTo(Store::class);
+        return $this->belongsTo(Store::class,'store_id');
     }
 }

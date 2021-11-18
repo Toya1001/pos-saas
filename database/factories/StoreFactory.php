@@ -18,9 +18,8 @@ class StoreFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'contact_id' => Contact::factory(),
             'store_type_id' => $this->faker->numberBetween(0, 5),
-            'name' => $this->faker->company(),
+            'name' => $this->faker->name(),
             'title' => $this->faker->companySuffix(),
             'banner_message' => $this->faker->realText(20),
             'slogan' => $this->faker->realText(20),
