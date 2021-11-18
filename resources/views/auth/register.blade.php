@@ -8,7 +8,7 @@
     <!-- Validation Errors -->
     <x-auth-validation-errors :errors="$errors" />
     <div class="font-sans">
-      <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
+      <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-transparent ">
           <div class="relative sm:max-w-sm w-full">
               <div class="card bg-gray-700 shadow-lg w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
               <div class="card bg-blue-500 shadow-lg w-full h-full rounded-3xl absolute  transform rotate-6"></div>
@@ -30,26 +30,26 @@
             <x-input id="email" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" type="email" name="email" placeholder="Email" :value="old('email')" required />
         </div>
 
-         <!-- Address -->
+         {{-- <!-- Address -->
          <div class="mt-7">
             <x-input id="address" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" type="text" name="address" placeholder="Address" :value="old('address')" required />
-        </div class="mt-7">
+        </div class="mt-7"> --}}
 
-          <!-- Phone -->
+          {{-- <!-- Phone -->
           <div class="mt-7">
             <x-input id="phone" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" type="number" name="phone" placeholder="Phone Number" :value="old('name')" required />
-        </div>
+        </div> --}}
 
-          <!-- Id -->
+          {{-- <!-- Id -->
           <div class="mt-7">
             <x-input id="id_image" class="mt-1 p-2 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" type="file" accept="image/*" name="id_image" required />
-        </div>
+        </div> --}}
 
-          <!-- Id -->
+          {{-- <!-- Id -->
           <div class="mt-7">
             <x-input id="check_box" class="block mt-1" type="checkbox" accept="" name="check_box"/>
             <x-label for="check_box" :value="__('Associate')" />
-        </div>
+        </div> --}}
 
         <!-- Password -->
         <div class="mt-7">
