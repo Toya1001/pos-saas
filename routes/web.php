@@ -1,15 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\Home\Index;
 use App\Http\Livewire\Product\CreateProduct;
 use App\Http\Livewire\SaleReport\SalesReport;
-use App\Http\Livewire\Storefront\Frontend\Header;
+use App\Http\Livewire\Storefront\Backend\AdminDashboard;
 use App\Http\Livewire\Storefront\Backend\Adminindox;
 use App\Http\Livewire\Storefront\Backend\AdminProfile;
-use App\Http\Livewire\Storefront\Backend\AdminDashboard;
-use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
-use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
 use App\Http\Livewire\Storefront\Backend\Store\CreateAsscoiate;
+use App\Http\Livewire\Storefront\Backend\Store\CreateStore;
+use App\Http\Livewire\Storefront\Backend\Store\ViewDetail;
+use App\Http\Livewire\Storefront\Frontend\Cart;
+use App\Http\Livewire\Storefront\Frontend\Header;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,8 +45,7 @@ Route::group(['middleware' => 'associate'], function () {
 ////////////////////////////////// MIDDLEWARES ////////////////////////////////////
 
 
-
-Route::get('/', Header::class)->name('index');
+Route::get('/', Index::class)->name('index');
 
 Route::view('/pos', 'pos.pos')->name('pos');
 Route::view('/pos2', 'pos.pos2')->name('pos2');
@@ -71,7 +72,11 @@ Route::group(['prefix' => 'storefront', 'as' => 'backend.'], function () {
 
     Route::get('/backend/store/ViewSalesReport', SalesReport::class)
         ->name('SalesReport');
+
 });
+
+Route::get('/{storeName}/store', Header::class)
+    ->name('storefront');
 
 Route::get('/product/create', CreateProduct::class)
     ->name('product.create');
@@ -81,8 +86,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/cart', function () {
-    return view('redirecTo.storefront.frontend.cart');
-})->name('cart');
+Route::get('/cart', Cart::class)->name('cart');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

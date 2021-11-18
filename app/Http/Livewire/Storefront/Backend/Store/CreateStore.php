@@ -21,7 +21,7 @@ class CreateStore extends Component
     public $bannerStatus = false;
 
     protected array $rules = [
-        'store.name' => 'required|max:20',
+        'store.name' => 'required|max:20|unique:stores,name',
         'store.store_type_id' => 'required|int',
         'store.theme' => 'required',
         'store.title' => 'required|max:40',
@@ -58,8 +58,6 @@ class CreateStore extends Component
 
     public function createStore()
     {
-
-
 
         $this->validate();
 
@@ -99,7 +97,7 @@ class CreateStore extends Component
         }
 
         $this->dispatchBrowserEvent('show-alert');
-        return redirect()->route('backEnd.dashboard')->with(['success','Store Created Successful']);
+        return redirect()->route('backend.dashboard')->with(['success','Store Created Successful']);
 
     }
 

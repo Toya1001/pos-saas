@@ -78,7 +78,6 @@ class Store extends Model
         'mission',
         'theme',
         'desc',
-        'theme',
         'logo_path'
     ];
 
