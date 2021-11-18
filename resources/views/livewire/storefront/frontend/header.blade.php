@@ -5,7 +5,7 @@
     <div class="mx-auto sm:grid  lg:grid-cols-3 max-w-screen-2xl lg:h-screen">
         <div class="relative flex items-end px-4 pt-64 pb-4 lg:col-span-2 sm:px-8 sm:pb-8 lg:px-12 lg:pb-12">
             <img
-                src="{{ $storeInfos->banner[2]->bannerLogo() }}"
+                src="{{ $storeInfos->banner[0]->bannerLogo() }}"
                 alt="Office workers high fiving"
                 class="absolute inset-0 object-cover w-full h-full"/>
 
@@ -31,7 +31,7 @@
         <div class="hidden  sm:grid sm:grid-cols-2 lg:grid-cols-1">
             <div class="sm:relative sm:h-64 lg:h-full">
                 <img
-                    src="{{ $storeInfos->banner[0]->bannerLogo() }}"
+                    src="{{ $storeInfos->banner[1]->bannerLogo() }}"
                     alt="Office workers in a meeting"
                     class="sm:absolute sm:inset-0 sm:object-cover sm:w-full sm:h-full"
                 />
@@ -39,7 +39,7 @@
 
             <div class="sm:relative sm:h-64 lg:h-full">
                 <img
-                    src="{{ $storeInfos->banner[1]->bannerLogo() }}"
+                    src="{{ $storeInfos->banner[2]->bannerLogo() }}"
                     alt="Programmers working"
                     class="sm:absolute sm:inset-0 sm:object-cover sm:w-full sm:h-full"
                 />
