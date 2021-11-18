@@ -11,7 +11,7 @@
 
         </div>
 
-        <div class="max-w-3xl absolute my-64 inset-0 z-20 mx-auto text-center">
+        <div class="w-screen absolute inset-0 z-20 flex justify-center items-center flex-col mx-auto text-center">
             <h1
                 class="text-3xl font-extrabold text-transparent sm:text-8xl bg-clip-text bg-white">
 
@@ -19,7 +19,7 @@
 
             </h1>
 
-            <p class="max-w-xl mx-auto mt-6 text-2xl">
+            <p class="max-w-xl mx-auto mt-6 text-white text-4xl">
 
                 {{ $storeInfos->banner_message }}
 

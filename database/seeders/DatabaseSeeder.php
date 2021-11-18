@@ -53,7 +53,8 @@ class DatabaseSeeder extends Seeder
 
         Product::factory()->count(4000)->state(new Sequence(
             ['status' => 'active'],
-            ['status' => 'inactive']
+            ['status' => 'inactive'],
+            ['sale_price' => null]
         ))->create();
 
         $this->call([

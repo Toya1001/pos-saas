@@ -52,9 +52,10 @@
 
         @forelse($products as $product)
 
-            <div>
+            <div class="transform transition duration-500 ease-in-out">
 
-                <a href="#" class="block h-64 rounded-lg shadow-lg bg-white"></a>
+                <img src="https://cdn.pixabay.com/photo/2016/03/27/07/12/apple-1282241_960_720.jpg"
+                     class="block h-64 rounded-lg shadow-lg bg-white"/>
 
                 <div class="flex items-center justify-between mt-3">
 
@@ -69,18 +70,39 @@
 
                     </div>
 
-                    <span class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
+                    @if($product->sale_price)
+
+                        <span
+                            class="flex items-center line-through h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
 
                         ${{ number_format($product->price,2) }}
 
                     </span>
+
+                        <span class="flex items-center h-8 bg-red-200 text-red-700 text-sm px-2 rounded">
+
+                        ${{ number_format($product->sale_price,2) }}
+
+                    </span>
+
+                    @else
+
+                        <span
+                            class="flex items-center h-8 bg-indigo-200 text-indigo-600 text-sm px-2 rounded">
+
+                        ${{ number_format($product->price,2) }}
+
+                    </span>
+
+
+                    @endif
 
                 </div>
 
             </div>
 
 
-    @empty
+        @empty
 
             <h1 class="text-4xl font-extrabold text-center mt-4 p-3">
 
@@ -88,47 +110,24 @@
 
             </h1>
 
-        @endforelse
-        <!-- Product Tile End -->
+    @endforelse
+    <!-- Product Tile End -->
 
     </div>
 
 
-    <div class="flex justify-center mt-10 space-x-1">
-        <button class="flex items-center justify-center h-8 w-8 rounded text-gray-400">
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                      clip-rule="evenodd"/>
-            </svg>
-        </button>
-        <button class="flex items-center justify-center h-8 px-2 rounded text-sm font-medium text-gray-400" disabled>
-            Prev
-        </button>
-        <button
-            class="flex items-center justify-center h-8 w-8 rounded bg-indigo-200 text-sm font-medium text-indigo-600"
-            disabled>
-            1
-        </button>
-        <button
-            class="flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600">
-            2
-        </button>
-        <button
-            class="flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600">
-            3
-        </button>
-        <button
-            class="flex items-center justify-center h-8 px-2 rounded hover:bg-indigo-200 text-sm font-medium text-gray-600 hover:text-indigo-600">
-            Next
-        </button>
-        <button
-            class="flex items-center justify-center h-8 w-8 rounded hover:bg-indigo-200 text-gray-600 hover:text-indigo-600">
-            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clip-rule="evenodd"/>
-            </svg>
-        </button>
+    <div class="flex m-3 justify-center mt-10 space-x-1">
+
+        @if($more)
+
+            <a wire:click.prevent="seeMoreStore"
+               class="inline-block px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg" href="">
+
+                View More
+
+            </a>
+
+        @endif
+
     </div>
     <!-- Component End  --></div>
