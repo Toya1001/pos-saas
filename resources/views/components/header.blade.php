@@ -8,13 +8,24 @@
 
     {{-- Links --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
-    @livewireStyles
+
+    {{-- FontAweSome V6 --}}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+
 
     {{-- Scripts --}}
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-    <title>Document</title>
+        <!-- JavaScript -->
+    <script defer src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+    <title>{{env('APP_NAME')." POS"}}</title>
+    @livewireStyles
 </head>
 
 <body>
