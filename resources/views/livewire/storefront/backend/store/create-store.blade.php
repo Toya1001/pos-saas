@@ -62,18 +62,22 @@
 
                 <x-input.label label="Store Color Theme">
 
-                    <x-input.select field="Color" wire:model="store.theme"
-                                    :error="$errors->first('store.theme')">
+{{--                    <x-input.select field="Color" wire:model="store.theme"--}}
+{{--                                    :error="$errors->first('store.theme')">--}}
 
-                        <option value="blue" class="capitalize">Blue</option>
-                        <option value="red" class="capitalize">red</option>
-                        <option value="yellow" class="capitalize">yellow</option>
-                        <option value="orange" class="capitalize">orange</option>
-                        <option value="green" class="capitalize">green</option>
-                        <option value="gray" class="capitalize">gray</option>
-                        <option value="indigo" class="capitalize">indigo</option>
+{{--                        <option value="blue" class="capitalize">Blue</option>--}}
+{{--                        <option value="red" class="capitalize">red</option>--}}
+{{--                        <option value="yellow" class="capitalize">yellow</option>--}}
+{{--                        <option value="orange" class="capitalize">orange</option>--}}
+{{--                        <option value="green" class="capitalize">green</option>--}}
+{{--                        <option value="gray" class="capitalize">gray</option>--}}
+{{--                        <option value="indigo" class="capitalize">indigo</option>--}}
 
-                    </x-input.select>
+{{--                    </x-input.select>--}}
+
+
+                    <x-input.text wire:model.debounce.300ms="store.theme" type="color" class="h-10"
+                                  :error="$errors->first('store.theme')" />
 
                 </x-input.label>
 
@@ -200,13 +204,25 @@
 
                 <div class="lg:col-span-2 md:col-span-1 col-span-1 overflow-y-scroll h-52 ">
 
+{{--                        {{count($bannerUpload)}}--}}
+
+{{--                        {{($bannerStatus)}}--}}
                     <x-input.label label="Photo" for="bannerUpload">
 
-                        <x-input.filepond wire:model="bannerUpload"
+                        <x-input.filepond :disabled="$bannerStatus" wire:model="bannerUpload"
                                           multiple/>
 
                         <div>
+
+                            @if (session()->has('disableFileUpload'))
+                                <span class="text-red-500 text-xs italic  m-1">
+                                {{session('disableFileUpload')}}
+                                </span>
+                            @endif
+
+
                             @if($errors->first('bannerUpload'))
+
 
                                 <span class="text-red-500 text-xs italic  m-1">
 
@@ -219,7 +235,9 @@
 
                     </x-input.label>
 
+
                 </div>
+
 
             </div>
 

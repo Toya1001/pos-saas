@@ -25,16 +25,18 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Contact whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Contact whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Database\Factories\ContactFactory factory(...$parameters)
  */
 class Contact extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'store_id',
         'contact_num',
         'contact_email',
         'contact_location'
     ];
     public function store(){
-        return $this->belongsTo(Store::class);
+        return $this->belongsTo(Store::class,'store_id');
     }
 }

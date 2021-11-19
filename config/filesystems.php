@@ -84,6 +84,7 @@ return [
 
     'links' => [
         public_path('bannerImages') => storage_path('app/bannerImages'),
+        public_path('storeLogo') => storage_path('app/storeLogo'),
     ],
 
 ];

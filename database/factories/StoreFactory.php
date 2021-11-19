@@ -2,7 +2,8 @@
 
 namespace Database\Factories;
 
-use Faker\Provider\Lorem;
+use App\Models\Contact;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,21 +16,31 @@ class StoreFactory extends Factory
      */
     public function definition()
     {
-        $companyName = $this->faker->company();
         return [
-            'user_id' => $this->faker->numberBetween(0, 5),
-            'contact_id' => $this->faker->numberBetween(0, 5),
+            'user_id' => User::factory(),
             'store_type_id' => $this->faker->numberBetween(0, 5),
-            'name' => $companyName,
-            'title' => $this->faker->companySuffix(5),
+            'name' => $this->faker->word(3),
+            'title' => $this->faker->companySuffix(),
             'banner_message' => $this->faker->realText(20),
             'slogan' => $this->faker->realText(20),
             'mission' => $this->faker->realText(10),
-            'theme' => "lorem",
+            'theme' => $this->faker->hexColor(),
             'desc' => $this->faker->realText(22),
-            'logo_path' => Str::random(10),
+            'logo_path' => 'logo.png',
         ];
     }
 
-    
+    public function randomColors(){
+       return $this->sequence(
+          ['theme' => 'red'],
+          ['theme' => 'purple'],
+          ['theme' => 'green'],
+          ['theme' => 'yellow'],
+          ['theme' => 'blue'],
+          ['theme' => 'grey'],
+          ['theme' => 'pink'],
+          ['theme' => 'black'],
+          ['theme' => 'indigo'],
+        );
+    }
 }
