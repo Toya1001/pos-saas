@@ -11,9 +11,9 @@
                         <h1>Select Product</h1>
 
                         <div>
-                            <span class="text-gray-700 font-normal text-base hover:underline hover:text-blue-500 cursor-pointer">
+                            <h1 id="selectCustomer" class="text-gray-700 font-normal  hover:underline hover:text-blue-500 cursor-pointer ">
                                 {{$customerInfo['name'] ?? "Select customer"}}
-                            </span>
+                            </h1>
                             
                         </div>
 
@@ -248,6 +248,9 @@
 
             </div>
         </main>
+
+        @livewire('pos.select-customer')
+    
 
     </div>
 </div>

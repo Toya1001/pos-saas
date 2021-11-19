@@ -18,6 +18,14 @@ class Pos extends Component
    public $customers;
    public $search;
    public $itemQty;
+
+   protected $listeners = ['msgReset'];
+
+   public function msgReset() 
+   {
+        \sleep(5);
+        $this->msg = "";
+   }
    
    public function mount(){
         $this->cartItems = Cart::where('customer_id', 12)->with('product')->get();
@@ -32,7 +40,8 @@ class Pos extends Component
 
     public function addItem(int $productId){
         if(!$this->customerInfo){
-            $this->msg = "<script>alert('Please Complete Customer Form First!');</script>";
+            $this->msg = "<script>alert('Please Complete Customer Form First!');document.getElementById('selectCustomer').classList.add('animate__animated', 'animate__pulse', 'animate__repeat-3');</script>";
+            $this->emit('msgReset');
             return;
         }
         // if(isset($this->itemQty[$productId])){
@@ -74,7 +83,7 @@ class Pos extends Component
         $customer->customer_tel = $this->customerInfo['tel'] ?? null;
         $customer->save();
 
-        $this->msg = "<script>alertify.success('Successfully Added $customer->customer_name'); </script>";
+        $this->msg = "<script>alertify.success('Successfully Added $customer->customer_name');</script>";
         $this->page = "product";
         $this->customerInfo['id'] = $customer->id;    
     }
